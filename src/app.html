@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<style>
+			:root {
+				--bs-body-bg: #121212;
+				--bs-body-color: #e0e0e0;
+				--bs-primary: #bb86fc;
+				--bs-secondary: #03dac6;
+				--bs-success: #4caf50;
+				--bs-info: #2196f3;
+				--bs-warning: #ff9800;
+				--bs-danger: #f44336;
+				--bs-light: #f1f1f1;
+				--bs-dark: #212121;
+			}
+
+			body {
+				background-color: var(--bs-body-bg);
+				color: var(--bs-body-color);
+			}
+
+			.card-custom {
+				background-color: var(--bs-dark);
+				border: none;
+				border-radius: 0.5rem;
+				transition: transform 0.3s, box-shadow 0.3s;
+			}
+
+			.card-custom .card-body {
+				color: var(--bs-body-color);
+			}
+
+			.card-custom:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+			}
+
+			.hero {
+				padding: 3rem 1.5rem;
+				text-align: center;
+				background-color: var(--bs-dark);
+				border-radius: 0.5rem;
+				margin-bottom: 2rem;
+			}
+
+			.social-links a {
+				color: var(--bs-primary);
+				margin: 0 0.5rem;
+				font-size: 1.5rem;
+				transition: color 0.3s, transform 0.3s;
+			}
+
+			.social-links a:hover {
+				color: var(--bs-secondary);
+				transform: scale(1.2);
+			}
+
+			.about-me, .connect-with-me {
+				padding: 2rem 1.5rem;
+				background-color: var(--bs-dark);
+				border-radius: 0.5rem;
+				margin-bottom: 2rem;
+			}
+		</style>
+
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
