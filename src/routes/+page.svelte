@@ -103,19 +103,19 @@
         <h2 class="neon-text">Connect with Me</h2>
         <div class="social-links">
             <a href="https://github.com/ArchangelGCA" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-                <i class="fab fa-github neon-text"></i>
+                <i class="fab fa-github social-links"></i>
             </a>
             <a href="https://www.deviantart.com/archangelgca" target="_blank" rel="noopener" aria-label="DeviantArt"
                title="DeviantArt">
-                <i class="fab fa-deviantart neon-text"></i>
+                <i class="fab fa-deviantart social-links"></i>
             </a>
             <a href="https://discord.gg/bp8BNNssEK" target="_blank" rel="noopener" aria-label="Discord" title="Discord">
-                <i class="fab fa-discord neon-text"></i>
+                <i class="fab fa-discord social-links"></i>
             </a>
             <a href="https://tales.rosesintheflames.com/profile/bfc1c4a7-f2af-494a-b7d9-35377f16d33e" target="_blank"
                rel="noopener" title="Roses in The Flames"
                aria-label="RiTF">
-                <i class="fa fa-globe neon-text"></i>
+                <i class="fa fa-globe social-links"></i>
             </a>
         </div>
     </div>
@@ -202,24 +202,6 @@
         }
         to {
             box-shadow: 0 0 15px var(--vaporwave), 0 0 20px var(--vaporwave), 0 0 30px var(--vaporwave);
-        }
-    }
-
-    @keyframes box-shadow-move {
-        0% {
-            box-shadow: 0 0 5px var(--vaporwave), 0 0 5px var(--vaporwave), 0 0 5px var(--vaporwave), 0 0 5px var(--vaporwave);
-        }
-        25% {
-            box-shadow: 5px 0 5px var(--vaporwave), -5px 0 5px var(--vaporwave), 5px 0 5px var(--vaporwave), -5px 0 5px var(--vaporwave);
-        }
-        50% {
-            box-shadow: 0 5px 5px var(--vaporwave), 0 -5px 5px var(--vaporwave), 0 5px 5px var(--vaporwave), 0 -5px 5px var(--vaporwave);
-        }
-        75% {
-            box-shadow: -5px 0 5px var(--vaporwave), 5px 0 5px var(--vaporwave), -5px 0 5px var(--vaporwave), 5px 0 5px var(--vaporwave);
-        }
-        100% {
-            box-shadow: 0 0 5px var(--vaporwave), 0 0 5px var(--vaporwave), 0 0 5px var(--vaporwave), 0 0 5px var(--vaporwave);
         }
     }
 </style>
