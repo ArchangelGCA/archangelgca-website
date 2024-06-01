@@ -1,5 +1,5 @@
 <script>
-    import Seo from "sk-seo";
+    import Seo from "@archangelgca/sk-seo";
 
     const tooltipConfig = {
         animation: 'fade',
