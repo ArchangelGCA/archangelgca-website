@@ -10,7 +10,6 @@
 	"devDependencies": {
 		"@formkit/auto-animate": "^0.8.2",
 		"@svelte-plugins/tooltips": "^3.0.1",
-		"@sveltejs/adapter-auto": "^3.3.0",
 		"@sveltejs/adapter-node": "^5.2.9",
 		"@sveltejs/kit": "^2.7.2",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
