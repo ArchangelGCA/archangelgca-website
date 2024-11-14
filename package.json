@@ -11,12 +11,12 @@
 		"@formkit/auto-animate": "^0.8.2",
 		"@svelte-plugins/tooltips": "^3.0.1",
 		"@sveltejs/adapter-node": "^5.2.9",
-		"@sveltejs/kit": "^2.7.2",
+		"@sveltejs/kit": "^2.8.1",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"bootstrap": "^5.3.3",
-		"sk-seo": "^0.4.2",
-		"svelte": "^5.1.2",
-		"vite": "^5.4.10"
+		"sk-seo": "^0.4.3",
+		"svelte": "^5.1.16",
+		"vite": "^5.4.11"
 	},
 	"type": "module"
 }
