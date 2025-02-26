@@ -100,8 +100,8 @@
             <a href="https://discord.gg/bp8BNNssEK" target="_blank" rel="noopener" aria-label="Discord" title="Discord">
                 <i class="fab fa-discord social-links"></i>
             </a>
-            <a href="https://tales.rosesintheflames.com/profile/bfc1c4a7-f2af-494a-b7d9-35377f16d33e" target="_blank"
-               rel="noopener" title="Roses in The Flames"
+            <a href="https://tales.archangelgca.eu/profile/bfc1c4a7-f2af-494a-b7d9-35377f16d33e" target="_blank"
+               rel="noopener" title="DreamingDragons tales"
                aria-label="RiTF">
                 <i class="fa fa-globe social-links"></i>
             </a>
