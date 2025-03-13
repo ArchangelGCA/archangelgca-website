@@ -4,7 +4,7 @@
 
 <Seo
         title="ArchangelGCA - Official"
-        description="I specialize in web development, particularly using modern JavaScript frameworks such as Svelte/SvelteKit. When I\'m not coding or studying, I enjoy making digital art."
+        description="I specialize in web development, particularly using modern JavaScript frameworks such as Svelte/SvelteKit. When I'm not coding or studying, I enjoy making digital art."
         siteName="ArchangelGCA - Official"
         imageURL="https://avatars.githubusercontent.com/u/159050591?v=4"
         logo="https://avatars.githubusercontent.com/u/159050591?v=4"
