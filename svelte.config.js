@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,6 +8,10 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
 			precompress: true,
+			pages: 'build',
+			assets: 'build',
+			fallback: undefined,
+			strict: true
 		})
 	}
 };
