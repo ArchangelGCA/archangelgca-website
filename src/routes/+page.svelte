@@ -83,7 +83,7 @@
             </a>
             <a href="https://tales.archangelgca.eu/profile/bfc1c4a7-f2af-494a-b7d9-35377f16d33e" target="_blank"
                rel="noopener" title="DreamingDragons tales"
-               aria-label="RiTF">
+               aria-label="DreamingDragons">
                 <i class="fa fa-globe social-links"></i>
             </a>
         </div>
