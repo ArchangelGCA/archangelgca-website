@@ -12,7 +12,10 @@ const config = {
 			assets: 'build',
 			fallback: undefined,
 			strict: true
-		})
+		}),
+		prerender: {
+			origin: 'https://archangelgca.eu',
+		}
 	}
 };
 
