@@ -1,5 +1,8 @@
 <script>
-    import Seo from "sk-seo";
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import scriptSrc from 'bootstrap/dist/js/bootstrap.bundle.min.js?url';
+    import '@fortawesome/fontawesome-free/css/all.min.css';
+    import Seo from "$lib/components/Seo.svelte";
 
 	/**
 	 * @typedef {Object} Props
@@ -9,6 +12,10 @@
 	let { children } = $props();
 
 </script>
+
+<svelte:head>
+    <script rel="preload" src={scriptSrc}></script>
+</svelte:head>
 
 <Seo
         title="ArchangelGCA - Official"
@@ -26,3 +33,26 @@
 />
 
 {@render children?.()}
+
+<style>
+    :global {
+        :root {
+            --bs-body-bg: #121212;
+            --bs-body-color: #e0e0e0;
+            --bs-primary: #bb86fc;
+            --bs-secondary: #03dac6;
+            --bs-success: #4caf50;
+            --bs-info: #2196f3;
+            --bs-warning: #ff9800;
+            --bs-danger: #f44336;
+            --bs-light: #f1f1f1;
+            --bs-dark: #212121;
+            --vaporwave: rgba(255, 0, 255, 0.25);
+        }
+
+        body {
+            background-color: var(--bs-body-bg);
+            color: var(--bs-body-color);
+        }
+    }
+</style>
