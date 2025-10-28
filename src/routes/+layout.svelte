@@ -29,6 +29,7 @@
         twitter="true"
         index="true"
         canonical="https://archangelgca.eu/"
+        url="https://archangelgca.eu/"
         keywords="ArchangelGCA, Developer, Artist, Web Development, Svelte, SvelteKit, Digital Art"
 />
 
