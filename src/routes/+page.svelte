@@ -659,6 +659,12 @@
     .social-name {
         font-size: 0.8rem;
         opacity: 0.8;
+        text-align: center;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        max-width: 100%;
+        padding: 0 0.25rem;
     }
 
     .social-card:hover {
@@ -829,7 +835,8 @@
         }
 
         .social-name {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
+            line-height: 1.2;
         }
 
         .code-content {
@@ -889,6 +896,16 @@
         .social-card {
             width: 80px;
             height: 80px;
+        }
+
+        .social-card i {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .social-name {
+            font-size: 0.6rem;
+            line-height: 1.1;
         }
 
         .tool-card {
