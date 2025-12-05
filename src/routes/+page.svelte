@@ -113,8 +113,8 @@
                         like <strong>Svelte</strong> and <strong>SvelteKit</strong>.
                     </p>
                     <p class="about-text">
-                        When I'm not immersed in code, you'll find me expressing creativity through 
-                        <strong>art</strong>. I believe in the perfect blend of functionality and creative aesthetics.
+                        From time to time, you'll find me expressing creativity through
+                        <strong>art</strong>. Otherwise, I may be studying or working.
                     </p>
                     <div class="about-stats row g-4 mt-4">
                         <div class="col-4">
