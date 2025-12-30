@@ -1,25 +1,80 @@
 <script>
-    import { fly, fade, scale } from 'svelte/transition';
-    import { quintOut, elasticOut } from 'svelte/easing';
-    import { onMount } from 'svelte';
+    import {fly, fade, scale} from 'svelte/transition';
+    import {quintOut, elasticOut} from 'svelte/easing';
+    import {onMount} from 'svelte';
 
     let visible = $state(false);
     let scrollY = $state(0);
 
     const tools = [
-        { id: 'bootstrap', icon: 'fab fa-bootstrap', name: 'Bootstrap', description: 'CSS framework, old but good', color: '#7952b3' },
-        { id: 'sveltekit', icon: 'fas fa-code', name: 'SvelteKit', description: 'My go-to framework for the web', color: '#ff3e00' },
-        { id: 'supabase', icon: 'fas fa-database', name: 'Supabase', description: 'BaaS for databases (sometimes)', color: '#3ecf8e' },
-        { id: 'pocketbase', icon: 'fas fa-box', name: 'Pocketbase', description: 'Self-Hosted backend for simple projects', color: '#16a394' },
-        { id: 'javascript', icon: 'fab fa-js', name: 'JavaScript', description: 'The language for headaches', color: '#f7df1e' },
-        { id: 'htmlcss', icon: 'fab fa-html5', name: 'HTML/CSS', description: 'I know my bricks', color: '#e34f26' }
+        {
+            id: 'bootstrap',
+            icon: 'fab fa-bootstrap',
+            name: 'Bootstrap',
+            description: 'CSS framework, old but good',
+            color: '#7952b3'
+        },
+        {
+            id: 'sveltekit',
+            icon: 'fas fa-code',
+            name: 'SvelteKit',
+            description: 'My go-to framework for the web',
+            color: '#ff3e00'
+        },
+        {
+            id: 'supabase',
+            icon: 'fas fa-database',
+            name: 'Supabase',
+            description: 'BaaS for databases (sometimes)',
+            color: '#3ecf8e'
+        },
+        {
+            id: 'pocketbase',
+            icon: 'fas fa-box',
+            name: 'Pocketbase',
+            description: 'Self-Hosted backend for simple projects',
+            color: '#16a394'
+        },
+        {
+            id: 'javascript',
+            icon: 'fab fa-js',
+            name: 'JavaScript',
+            description: 'The language for headaches',
+            color: '#f7df1e'
+        },
+        {id: 'htmlcss', icon: 'fab fa-html5', name: 'HTML/CSS', description: 'I know my bricks', color: '#e34f26'}
     ];
 
     const socials = [
-        { id: 'github', icon: 'fab fa-github', name: 'GitHub', url: 'https://github.com/ArchangelGCA', color: '#6e5494' },
-        { id: 'deviantart', icon: 'fab fa-deviantart', name: 'DeviantArt', url: 'https://www.deviantart.com/archangelgca', color: '#05cc47' },
-        { id: 'discord', icon: 'fab fa-discord', name: 'Discord', url: 'https://discord.gg/bp8BNNssEK', color: '#5865f2' },
-        { id: 'dreamingdragons', icon: 'fa fa-globe', name: 'DreamingDragons', url: 'https://tales.archangelgca.eu/profile/bfc1c4a7-f2af-494a-b7d9-35377f16d33e', color: '#bb86fc' }
+        {id: 'github', icon: 'fab fa-github', name: 'GitHub', url: 'https://github.com/ArchangelGCA', color: '#6e5494'},
+        {
+            id: 'deviantart',
+            icon: 'fab fa-deviantart',
+            name: 'DeviantArt',
+            url: 'https://www.deviantart.com/archangelgca',
+            color: '#05cc47'
+        },
+        {
+            id: 'discord',
+            icon: 'fab fa-discord',
+            name: 'Discord',
+            url: 'https://discord.gg/bp8BNNssEK',
+            color: '#5865f2'
+        },
+        {
+            id: 'reddit',
+            icon: 'fab fa-reddit',
+            name: 'Reddit',
+            url: 'https://www.reddit.com/user/ArchangelGCA/',
+            color: '#FF5700'
+        },
+        {
+            id: 'dreamingdragons',
+            icon: 'fa fa-globe',
+            name: 'DreamingDragons',
+            url: 'https://tales.archangelgca.eu/profile/bfc1c4a7-f2af-494a-b7d9-35377f16d33e',
+            color: '#bb86fc'
+        },
     ];
 
     onMount(() => {
@@ -27,32 +82,32 @@
     });
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:scrollY/>
 
 <!-- Hero Section -->
 <section class="hero-section">
     <div class="hero-bg">
         <div class="grid-overlay"></div>
     </div>
-    
+
     <div class="container position-relative">
         {#if visible}
             <div class="hero-content text-center">
                 <div class="avatar-wrapper mb-4" in:scale={{ duration: 800, delay: 200, easing: elasticOut }}>
-                    <img 
-                        src="https://avatars.githubusercontent.com/u/159050591?v=4" 
-                        alt="ArchangelGCA's Avatar" 
-                        class="avatar-img"
+                    <img
+                            src="https://avatars.githubusercontent.com/u/159050591?v=4"
+                            alt="ArchangelGCA's Avatar"
+                            class="avatar-img"
                     >
                     <div class="avatar-ring"></div>
                     <div class="avatar-ring ring-2"></div>
                 </div>
-                
+
                 <h1 class="hero-title" in:fly={{ y: 50, duration: 800, delay: 400, easing: quintOut }}>
                     <span class="greeting">Hello, I'm</span>
                     <span class="name-highlight">ArchangelGCA</span>
                 </h1>
-                
+
                 <p class="hero-subtitle" in:fly={{ y: 30, duration: 800, delay: 600, easing: quintOut }}>
                     <span class="typed-text">Developer</span>
                     <span class="divider">•</span>
@@ -60,7 +115,7 @@
                     <span class="divider">•</span>
                     <span class="typed-text">Creator</span>
                 </p>
-                
+
                 <div class="hero-cta" in:fade={{ duration: 800, delay: 800 }}>
                     <a href="#about" class="btn btn-glow btn-lg">
                         <span>Discover More</span>
@@ -70,7 +125,7 @@
             </div>
         {/if}
     </div>
-    
+
     <div class="scroll-indicator" class:hidden={scrollY > 100}>
         <div class="mouse">
             <div class="wheel"></div>
@@ -97,7 +152,8 @@
 <code>  <span class="property">name</span>: <span class="string">"ArchangelGCA"</span>,</code>
 <code>  <span class="property">role</span>: <span class="string">"Full-Stack Developer"</span>,</code>
 <code>  <span class="property">passion</span>: <span class="string">"Developing & Art"</span>,</code>
-<code>  <span class="property">loves</span>: [<span class="string">"Svelte"</span>, <span class="string">"Design"</span>, <span class="string">"Dreaming"</span>]</code>
+<code>  <span class="property">loves</span>: [<span class="string">"Svelte"</span>, <span class="string">"Design"</span>, <span
+        class="string">"Dreaming"</span>]</code>
 <code>&#125;</code></pre>
                         </div>
                     </div>
@@ -108,8 +164,8 @@
                     <h6 class="section-label">About Me</h6>
                     <h2 class="section-title">The creative <span class="text-gradient">Dreamer</span></h2>
                     <p class="about-text">
-                        I'm a passionate developer who loves building modern web applications with clean, 
-                        efficient code. By day, I craft digital experiences using cutting-edge technologies 
+                        I'm a passionate developer who loves building modern web applications with clean,
+                        efficient code. By day, I craft digital experiences using cutting-edge technologies
                         like <strong>Svelte</strong> and <strong>SvelteKit</strong>.
                     </p>
                     <p class="about-text">
@@ -150,13 +206,13 @@
             <h2 class="section-title">My Favourite <span class="text-gradient">Tools</span></h2>
             <p class="section-subtitle">Technologies I use to bring ideas to life</p>
         </div>
-        
+
         <div class="row g-3 g-md-4 justify-content-center">
             {#each tools as tool, i (tool.id)}
                 <div class="col-6 col-md-6 col-lg-4">
-                    <div 
-                        class="tool-card glass-card"
-                        style="--tool-color: {tool.color}; --delay: {i * 100}ms"
+                    <div
+                            class="tool-card glass-card"
+                            style="--tool-color: {tool.color}; --delay: {i * 100}ms"
                     >
                         <div class="tool-icon">
                             <i class={tool.icon}></i>
@@ -180,17 +236,17 @@
             <p class="connect-text mb-5">
                 Want to collaborate or just say hi? Find me on these platforms!
             </p>
-            
+
             <div class="social-grid">
                 {#each socials as social, i (social.id)}
-                    <a 
-                        href={social.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="social-card"
-                        style="--social-color: {social.color}; --delay: {i * 100}ms"
-                        aria-label={social.name}
-                        title={social.name}
+                    <a
+                            href={social.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-card"
+                            style="--social-color: {social.color}; --delay: {i * 100}ms"
+                            aria-label={social.name}
+                            title={social.name}
                     >
                         <i class={social.icon}></i>
                         <span class="social-name">{social.name}</span>
@@ -205,7 +261,7 @@
 <footer class="site-footer py-4">
     <div class="container px-4 text-center">
         <p class="footer-text">
-            Crafted with <i class="fas fa-heart text-danger"></i> using 
+            Crafted with <i class="fas fa-heart text-danger"></i> using
             <span class="text-gradient">SvelteKit</span> & <span class="text-gradient">Bootstrap</span>
         </p>
         <p class="copyright">© {new Date().getFullYear()} ArchangelGCA. All rights reserved.</p>
@@ -244,9 +300,8 @@
     .grid-overlay {
         position: absolute;
         inset: 0;
-        background-image: 
-            linear-gradient(rgba(187, 134, 252, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(187, 134, 252, 0.03) 1px, transparent 1px);
+        background-image: linear-gradient(rgba(187, 134, 252, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(187, 134, 252, 0.03) 1px, transparent 1px);
         background-size: 50px 50px;
         mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
     }
@@ -471,9 +526,17 @@
         border-radius: 50%;
     }
 
-    .dot.red { background: #ff5f57; }
-    .dot.yellow { background: #febc2e; }
-    .dot.green { background: #28c840; }
+    .dot.red {
+        background: #ff5f57;
+    }
+
+    .dot.yellow {
+        background: #febc2e;
+    }
+
+    .dot.green {
+        background: #28c840;
+    }
 
     .code-content {
         padding: 1.5rem;
@@ -486,10 +549,21 @@
         line-height: 1.8;
     }
 
-    .keyword { color: #c792ea; }
-    .variable { color: #82aaff; }
-    .property { color: #f78c6c; }
-    .string { color: #c3e88d; }
+    .keyword {
+        color: #c792ea;
+    }
+
+    .variable {
+        color: #82aaff;
+    }
+
+    .property {
+        color: #f78c6c;
+    }
+
+    .string {
+        color: #c3e88d;
+    }
 
     .about-content {
         padding: 0;
@@ -707,8 +781,14 @@
     }
 
     @keyframes scroll-wheel {
-        0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-        100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
+        0% {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(-50%) translateY(12px);
+        }
     }
 
     @keyframes fadeInUp {
@@ -723,8 +803,12 @@
     }
 
     @keyframes rotate-bg {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
     }
 
     /* ========== Responsive ========== */
