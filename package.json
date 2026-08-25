@@ -1,23 +1,28 @@
 {
 	"name": "archangelgca-website",
-	"version": "0.2.6",
+	"version": "0.3.0",
 	"private": true,
+	"type": "module",
+	"packageManager": "bun@1.4.0",
+	"engines": {
+		"bun": ">=1.4.0"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"cf:deploy": "bun run build && wrangler pages deploy build"
 	},
 	"devDependencies": {
-		"@formkit/auto-animate": "^0.9.0",
-		"@fortawesome/fontawesome-free": "^7.1.0",
+		"@formkit/auto-animate": "^0.10.0",
+		"@fortawesome/fontawesome-free": "^7.3.1",
 		"@svelte-plugins/tooltips": "^3.0.3",
 		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/kit": "^2.50.2",
-		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"@sveltejs/kit": "^2.70.3",
+		"@sveltejs/vite-plugin-svelte": "^7.3.0",
 		"bootstrap": "^5.3.8",
 		"sk-seo": "^0.5.4",
-		"svelte": "^5.49.2",
-		"vite": "^7.3.1"
-	},
-	"type": "module"
+		"svelte": "^5.56.10",
+		"vite": "^8.2.2"
+	}
 }

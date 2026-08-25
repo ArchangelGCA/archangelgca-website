@@ -3,14 +3,21 @@ import adapter from '@sveltejs/adapter-static';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-        output: {
-            bundleStrategy: 'single',
-        },
+		output: {
+			bundleStrategy: 'single'
+		},
 		adapter: adapter({
-            precompress: true,
-        }),
+			pages: 'build',
+			assets: 'build',
+			fallback: undefined,
+			precompress: {
+				brotli: true,
+				gzip: true
+			},
+			strict: true
+		}),
 		prerender: {
-			origin: 'https://archangelgca.eu',
+			origin: 'https://archangelgca.eu'
 		}
 	}
 };

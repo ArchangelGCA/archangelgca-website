@@ -1,0 +1,15 @@
+[install]
+# Bun 1.4 text lockfile (bun.lock) – committed to git
+lockfile = "bun.lock"
+# Enforce exact versions from lockfile in CI
+frozenLockfile = false
+# Auto-install peer deps handling
+auto = "auto"
+
+[install.cache]
+# Use default global cache
+disable = false
+
+# Bun runtime – enable Node compat for tooling that expects it
+[run]
+bun = true
