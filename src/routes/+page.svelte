@@ -1,9 +1,4 @@
 <script>
-    import {fly, fade, scale} from 'svelte/transition';
-    import {quintOut, elasticOut} from 'svelte/easing';
-    import {onMount} from 'svelte';
-
-    let visible = $state(false);
     let scrollY = $state(0);
 
     const tools = [
@@ -77,9 +72,6 @@
         },
     ];
 
-    onMount(() => {
-        visible = true;
-    });
 </script>
 
 <svelte:window bind:scrollY/>
@@ -91,24 +83,25 @@
     </div>
 
     <div class="container position-relative">
-        {#if visible}
             <div class="hero-content text-center">
-                <div class="avatar-wrapper mb-4" in:scale={{ duration: 800, delay: 200, easing: elasticOut }}>
+                <div class="avatar-wrapper mb-4">
                     <img
-                            src="https://avatars.githubusercontent.com/u/159050591?v=4"
+                            src="/avatar.webp"
                             alt="ArchangelGCA's Avatar"
                             class="avatar-img"
+                            width="150"
+                            height="150"
                     >
                     <div class="avatar-ring"></div>
                     <div class="avatar-ring ring-2"></div>
                 </div>
 
-                <h1 class="hero-title" in:fly={{ y: 50, duration: 800, delay: 400, easing: quintOut }}>
+                <h1 class="hero-title">
                     <span class="greeting">Hello, I'm</span>
                     <span class="name-highlight">ArchangelGCA</span>
                 </h1>
 
-                <p class="hero-subtitle" in:fly={{ y: 30, duration: 800, delay: 600, easing: quintOut }}>
+                <p class="hero-subtitle">
                     <span class="typed-text">Developer</span>
                     <span class="divider">•</span>
                     <span class="typed-text">Artist</span>
@@ -116,14 +109,13 @@
                     <span class="typed-text">Creator</span>
                 </p>
 
-                <div class="hero-cta" in:fade={{ duration: 800, delay: 800 }}>
+                <div class="hero-cta">
                     <a href="#about" class="btn btn-glow btn-lg">
                         <span>Discover More</span>
                         <i class="fas fa-chevron-down ms-2"></i>
                     </a>
                 </div>
             </div>
-        {/if}
     </div>
 
     <div class="scroll-indicator" class:hidden={scrollY > 100}>
@@ -271,13 +263,15 @@
 <style>
     /* ========== CSS Variables ========== */
     :root {
-        --primary-purple: #bb86fc;
-        --secondary-cyan: #03dac6;
-        --dark-bg: #0a0a0f;
-        --card-bg: rgba(30, 30, 45, 0.6);
-        --glass-bg: rgba(255, 255, 255, 0.05);
-        --glow-purple: rgba(187, 134, 252, 0.4);
-        --glow-cyan: rgba(3, 218, 198, 0.4);
+        --eu-blue: #4c8dff;
+        --eu-blue-deep: #003399;
+        --eu-gold: #ffcc00;
+        --eu-ink: #f2efe6;
+        --eu-muted: #a6aeb9;
+        --eu-bg: #0c0f14;
+        --eu-surface: #12161d;
+        --eu-line: #232a36;
+        --eu-link: #7aa7ff;
     }
 
     /* ========== Hero Section ========== */
@@ -298,12 +292,7 @@
     }
 
     .grid-overlay {
-        position: absolute;
-        inset: 0;
-        background-image: linear-gradient(rgba(187, 134, 252, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(187, 134, 252, 0.03) 1px, transparent 1px);
-        background-size: 50px 50px;
-        mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+        display: none;
     }
 
     .hero-content {
@@ -314,6 +303,7 @@
     .avatar-wrapper {
         position: relative;
         display: inline-block;
+        animation: avatar-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s backwards;
     }
 
     .avatar-img {
@@ -321,8 +311,7 @@
         height: 150px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid var(--primary-purple);
-        box-shadow: 0 0 30px var(--glow-purple);
+        border: 2px solid var(--eu-blue);
         position: relative;
         z-index: 2;
     }
@@ -330,7 +319,7 @@
     .avatar-ring {
         position: absolute;
         inset: -10px;
-        border: 2px solid var(--primary-purple);
+        border: 1px solid rgba(76, 141, 255, 0.5);
         border-radius: 50%;
         opacity: 0.5;
         animation: pulse-ring 2s ease-out infinite;
@@ -345,6 +334,7 @@
         font-size: clamp(2rem, 5vw, 3.5rem);
         font-weight: 700;
         margin-bottom: 1rem;
+        animation: fadeInUp 0.8s ease 0.4s backwards;
     }
 
     .greeting {
@@ -358,11 +348,7 @@
 
     .name-highlight {
         display: block;
-        background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-cyan) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: none;
+        color: var(--eu-blue);
     }
 
     .hero-subtitle {
@@ -370,10 +356,11 @@
         color: var(--bs-body-color);
         opacity: 0.9;
         margin-bottom: 2rem;
+        animation: fadeInUp 0.8s ease 0.6s backwards;
     }
 
     .typed-text {
-        color: var(--primary-purple);
+        color: var(--eu-link);
     }
 
     .divider {
@@ -382,20 +369,19 @@
     }
 
     .btn-glow {
-        background: linear-gradient(135deg, var(--primary-purple), #9c5bfc);
-        border: none;
-        color: white;
+        background: var(--eu-blue);
+        border: 1px solid transparent;
+        color: #071022;
         padding: 1rem 2rem;
-        border-radius: 50px;
+        border-radius: 6px;
         font-weight: 600;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px var(--glow-purple);
     }
 
     .btn-glow:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 25px var(--glow-purple);
-        color: white;
+        background: #6e9eff;
+        color: #071022;
     }
 
     .scroll-indicator {
@@ -414,7 +400,7 @@
     .mouse {
         width: 26px;
         height: 40px;
-        border: 2px solid var(--primary-purple);
+        border: 2px solid var(--eu-blue);
         border-radius: 13px;
         position: relative;
     }
@@ -422,7 +408,7 @@
     .wheel {
         width: 4px;
         height: 8px;
-        background: var(--primary-purple);
+        background: var(--eu-blue);
         border-radius: 2px;
         position: absolute;
         top: 8px;
@@ -433,9 +419,9 @@
 
     /* ========== Section Styles ========== */
     .section-label {
-        color: var(--primary-purple);
+        color: var(--eu-muted);
         text-transform: uppercase;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         font-weight: 600;
         font-size: 0.85rem;
         margin-bottom: 0.5rem;
@@ -455,22 +441,18 @@
     }
 
     .text-gradient {
-        background: linear-gradient(135deg, var(--primary-purple), var(--secondary-cyan));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: var(--eu-blue);
     }
 
     .glass-card {
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
+        background: var(--eu-surface);
+        border: 1px solid var(--eu-line);
+        border-radius: 0.75rem;
     }
 
     /* ========== About Section ========== */
     .about-section {
-        background: linear-gradient(180deg, transparent 0%, rgba(187, 134, 252, 0.02) 50%, transparent 100%);
+        background: transparent;
     }
 
     .about-image-wrapper {
@@ -479,26 +461,7 @@
     }
 
     .about-shape {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(60px);
-        opacity: 0.3;
-    }
-
-    .shape-1 {
-        width: 200px;
-        height: 200px;
-        background: var(--primary-purple);
-        top: 0;
-        left: 0;
-    }
-
-    .shape-2 {
-        width: 150px;
-        height: 150px;
-        background: var(--secondary-cyan);
-        bottom: 0;
-        right: 0;
+        display: none;
     }
 
     .about-card {
@@ -514,10 +477,11 @@
     }
 
     .code-header {
-        background: rgba(0, 0, 0, 0.3);
+        background: #0c0f14;
         padding: 0.75rem 1rem;
         display: flex;
         gap: 0.5rem;
+        border-bottom: 1px solid var(--eu-line);
     }
 
     .dot {
@@ -550,19 +514,19 @@
     }
 
     .keyword {
-        color: #c792ea;
+        color: #7aa7ff;
     }
 
     .variable {
-        color: #82aaff;
+        color: #f2efe6;
     }
 
     .property {
-        color: #f78c6c;
+        color: #e8c547;
     }
 
     .string {
-        color: #c3e88d;
+        color: #a8c3a0;
     }
 
     .about-content {
@@ -577,22 +541,22 @@
     }
 
     .about-text strong {
-        color: var(--primary-purple);
+        color: var(--eu-link);
     }
 
     .stat-item {
         text-align: center;
         padding: 1rem;
-        background: var(--glass-bg);
+        background: var(--eu-surface);
         border-radius: 0.75rem;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--eu-line);
     }
 
     .stat-number {
         display: block;
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--primary-purple);
+        color: var(--eu-blue);
     }
 
     .stat-label {
@@ -604,7 +568,7 @@
 
     /* ========== Tools Section ========== */
     .tools-section {
-        background: linear-gradient(180deg, transparent 0%, rgba(3, 218, 198, 0.02) 50%, transparent 100%);
+        background: transparent;
     }
 
     .tool-card {
@@ -621,11 +585,11 @@
     .tool-card:hover {
         transform: translateY(-10px);
         border-color: var(--tool-color);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
     }
 
     .tool-card:hover .tool-glow {
-        opacity: 1;
+        opacity: 0;
     }
 
     .tool-icon {
@@ -637,14 +601,14 @@
         justify-content: center;
         font-size: 2rem;
         color: var(--tool-color);
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 1rem;
+        background: var(--eu-bg);
+        border: 1px solid var(--eu-line);
+        border-radius: 0.75rem;
         transition: all 0.3s ease;
     }
 
     .tool-card:hover .tool-icon {
         transform: scale(1.1);
-        box-shadow: 0 0 30px color-mix(in srgb, var(--tool-color) 40%, transparent);
     }
 
     .tool-name {
@@ -659,12 +623,7 @@
     }
 
     .tool-glow {
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at center, color-mix(in srgb, var(--tool-color) 10%, transparent), transparent 70%);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
+        display: none;
     }
 
     /* ========== Connect Section ========== */
@@ -680,15 +639,7 @@
     }
 
     .connect-wrapper::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: conic-gradient(from 0deg, transparent, var(--primary-purple), transparent 30%);
-        animation: rotate-bg 10s linear infinite;
-        opacity: 0.05;
+        display: none;
     }
 
     .connect-text {
@@ -712,11 +663,11 @@
         justify-content: center;
         width: 120px;
         height: 120px;
-        background: var(--glass-bg);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
+        background: var(--eu-surface);
+        border: 1px solid var(--eu-line);
+        border-radius: 0.75rem;
         text-decoration: none;
-        color: var(--bs-body-color);
+        color: var(--eu-ink);
         transition: all 0.3s ease;
         animation: fadeInUp 0.6s ease forwards;
         animation-delay: var(--delay);
@@ -744,8 +695,8 @@
     .social-card:hover {
         transform: translateY(-5px) scale(1.05);
         border-color: var(--social-color);
-        box-shadow: 0 10px 30px color-mix(in srgb, var(--social-color) 30%, transparent);
-        color: var(--bs-body-color);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+        color: var(--eu-ink);
     }
 
     .social-card:hover i {
@@ -754,7 +705,7 @@
 
     /* ========== Footer ========== */
     .site-footer {
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-top: 1px solid var(--eu-line);
     }
 
     .footer-text {
@@ -769,6 +720,26 @@
     }
 
     /* ========== Animations ========== */
+    @keyframes avatar-in {
+        from {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
     @keyframes pulse-ring {
         0% {
             transform: scale(1);
@@ -802,12 +773,21 @@
         }
     }
 
-    @keyframes rotate-bg {
-        from {
-            transform: rotate(0deg);
+    /* ========== Reduced motion ========== */
+    @media (prefers-reduced-motion: reduce) {
+        .avatar-wrapper,
+        .hero-title,
+        .hero-subtitle,
+        .hero-cta,
+        .avatar-ring,
+        .wheel {
+            animation: none;
         }
-        to {
-            transform: rotate(360deg);
+
+        .tool-card,
+        .social-card {
+            animation: none;
+            opacity: 1;
         }
     }
 
@@ -859,7 +839,11 @@
             margin: 0 0.5rem;
         }
 
-        .btn-glow {
+    .hero-cta {
+        animation: fade-in 0.8s ease 0.8s backwards;
+    }
+
+    .btn-glow {
             padding: 0.875rem 1.5rem;
             font-size: 0.95rem;
         }

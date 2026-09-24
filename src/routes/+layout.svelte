@@ -44,17 +44,21 @@
 <style>
     :global {
         :root {
-            --bs-body-bg: #0a0a0f;
-            --bs-body-color: #e0e0e0;
-            --bs-primary: #bb86fc;
-            --bs-secondary: #03dac6;
-            --bs-success: #4caf50;
-            --bs-info: #2196f3;
-            --bs-warning: #ff9800;
-            --bs-danger: #f44336;
-            --bs-light: #f1f1f1;
-            --bs-dark: #1a1a2e;
-            --vaporwave: rgba(187, 134, 252, 0.25);
+            --bs-body-bg: #0c0f14;
+            --bs-body-color: #f2efe6;
+            --bs-primary: #4c8dff;
+            --bs-secondary: #8a94a6;
+            --bs-success: #3fa45b;
+            --bs-info: #4c8dff;
+            --bs-warning: #ffcc00;
+            --bs-danger: #e5484d;
+            --bs-light: #f2efe6;
+            --bs-dark: #12161d;
+            --eu-blue: #4c8dff;
+            --eu-blue-deep: #003399;
+            --eu-gold: #ffcc00;
+            --eu-line: #232a36;
+            --eu-surface: #12161d;
         }
 
         * {
@@ -83,29 +87,29 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--bs-primary), #9c5bfc);
+            background: #2a3342;
             border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #d4a5ff, var(--bs-primary));
+            background: var(--bs-primary);
         }
 
         /* Selection */
         ::selection {
-            background: rgba(187, 134, 252, 0.3);
-            color: white;
+            background: var(--bs-primary);
+            color: #071022;
         }
 
         /* Links */
         a {
-            color: var(--bs-primary);
+            color: #7aa7ff;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--bs-secondary);
+            color: var(--bs-body-color);
         }
 
         /* Headings */

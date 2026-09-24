@@ -11,10 +11,10 @@
     let isVisible = $state(true);
 
     const colors = [
-        'rgba(187, 134, 252, 0.6)',  // Primary purple
-        'rgba(156, 91, 252, 0.5)',   // Darker purple
-        'rgba(212, 165, 255, 0.4)',  // Lighter purple
-        'rgba(3, 218, 198, 0.3)',    // Cyan accent
+        'rgba(76, 141, 255, 0.55)', // EU blue
+        'rgba(122, 167, 255, 0.35)', // Lighter EU blue
+        'rgba(166, 174, 185, 0.3)', // Neutral slate
+        'rgba(255, 204, 0, 0.28)', // EU gold, sparing
     ];
 
     /**
@@ -132,7 +132,7 @@
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(187, 134, 252, ${opacity})`;
+                        ctx.strokeStyle = `rgba(76, 141, 255, ${opacity})`;
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     }
@@ -240,13 +240,6 @@
         height: 100%;
         z-index: -1;
         pointer-events: none;
-        background: linear-gradient(
-            135deg,
-            #0a0a0f 0%,
-            #0d0d14 25%,
-            #0f0a18 50%,
-            #0a0a0f 75%,
-            #0a0a0f 100%
-        );
+        background: #0c0f14;
     }
 </style>
